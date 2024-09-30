@@ -41,4 +41,19 @@ function startGame() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
   }
+// Function to start the quiz
+function startGame() {
+    score = 0 // Reset score at the start of each game
+    startButton.classList.add('hide')
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    questionContainerElement.classList.remove('hide')
+    setNextQuestion()
+  }
   
+  // Function to set the next question
+  function setNextQuestion() {
+    resetState()
+    showQuestion(shuffledQuestions[currentQuestionIndex])
+  }
+    
