@@ -130,4 +130,20 @@ function setStatusClass(element, correct) {
     element.classList.remove('wrong')
   }
   
+// Event listener for viewing the score on a separate page
+viewScoreButton.addEventListener('click', () => {
+    window.location.href = 'score.html' // Redirect to score page
+  })
+
+// Retrieve score and username from localStorage
+const userData = JSON.parse(localStorage.getItem('quizUserData'))
+const resultElement = document.getElementById('result')
+
+// Display the user's name and score
+if (userData) {
+  resultElement.innerText = `${userData.name}, your score is ${userData.score}`
+} else {
+  resultElement.innerText = "No quiz results found."
+}
+
     
